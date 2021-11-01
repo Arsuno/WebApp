@@ -1,0 +1,18 @@
+﻿body 
+{
+    background-color:aquamarine;
+}
+
+.a
+{
+    background-color: lightseagreen;
+    color: white;
+    text-align: center;
+    padding: 10px 32px;
+    font size: 16px;
+}
+
+.NonActiveStyle
+{
+    opacity: 0.3;
+}

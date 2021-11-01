@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Car Brands and Models</h1>
+</div>
+
+<head>
+    <link href ="~/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <h3> Car Brands:</h3>
+
+        @foreach (var item in @Model.Brands)
+        {
+            <div class=@if (@item.Active == false) { @("NonActiveStyle") }>
+                @item.Name
+            </div>
+        }
+
+        <hr />
+
+        <h3> Car Models:</h3>
+
+        @foreach (var item in @Model.Models)
+        {
+            <div class=@if (@item.Active == false) { @("NonActiveStyle") }>
+                @item.Name
+            </div>
+        }
+
+        <hr />
+
+        @foreach (var item in @Model.SortedData)
+         {
+             <div>
+                 <h3>@item.CarBrand.Name:</h3>
+                 @foreach(var itemm in @item.CarModels)
+                {
+                 <p>@itemm.Name</p>
+                }
+             </div>
+         }
+
+
+    </div>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
